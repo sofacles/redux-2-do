@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and now I'm going to try to make a redux container, but this time without typescript.
 
 ## Available Scripts
 
