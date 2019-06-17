@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import TaskPage from './components/TaskPage';
 import './App.css';
 
 function App() {
+
+  const allTasks = [{
+    title: 'Pull Weeds',
+    description: 'Gallium galore and lions teeth',
+    status: 'in progress'
+  },
+  {
+    title: 'go to dentist',
+    description: 'I am falling apart',
+    status: 'not started'
+  },
+  {
+    title: 'Learn Redux in ES6',
+    description: 'Because it\'s too hard in typescript',
+    status: 'in progress'
+  }];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TaskPage tasks={allTasks} />
     </div>
   );
 }

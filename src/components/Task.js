@@ -1,6 +1,6 @@
 import React from 'react';
 const Task = props => {
-    return (<div>
+    return (<div className="task">
         <div className="task-header">
             <div>{props.task.title}</div>
             <hr />
@@ -10,4 +10,4 @@ const Task = props => {
 
 };
 
-export default task;
+export default Task;

@@ -4,13 +4,14 @@ import Task from './Task';
 const TaskList = props => {
     return (
         <div className="task-list">
-            <div className="task-list-title">
+            <h2 className="task-list-title">
                 <strong>{props.status}</strong>
-                {
-                    props.tasks.map(task => {
-                    <Task key={task.id} task={task} />
+            </h2>
+            {props.tasks.map(task => {
+                   return <Task task={task} />
                 })}
-            </div>
         </div>
     );
 };
+
+export default TaskList;
