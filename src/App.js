@@ -1,30 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import TaskPage from './components/TaskPage';
+import { connect } from 'react-redux';
 import './App.css';
 
-function App() {
 
-  const allTasks = [{
-    title: 'Pull Weeds',
-    description: 'Gallium galore and lions teeth',
-    status: 'in progress'
-  },
-  {
-    title: 'go to dentist',
-    description: 'I am falling apart',
-    status: 'not started'
-  },
-  {
-    title: 'Learn Redux in ES6',
-    description: 'Because it\'s too hard in typescript',
-    status: 'in progress'
-  }];
+class App extends Component {
 
-  return (
-    <div className="App">
-      <TaskPage tasks={allTasks} />
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <TaskPage tasks={this.props.tasks} />
+      </div>
+    );
+  }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    tasks: state.tasks
+  };
+}
+
+export default connect(mapStateToProps)(App);
+
