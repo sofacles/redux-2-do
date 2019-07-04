@@ -10,3 +10,8 @@
 .task {
   margin-bottom: 20px;
 }
+
+input.full-width {
+  display: flex;
+  margin: 10px;
+}

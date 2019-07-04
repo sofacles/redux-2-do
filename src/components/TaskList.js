@@ -8,7 +8,7 @@ const TaskList = props => {
                 <strong>{props.status}</strong>
             </h2>
             {props.tasks.map(task => {
-                   return <Task task={task} />
+                   return <Task task={task} key={task.id} />
                 })}
         </div>
     );
