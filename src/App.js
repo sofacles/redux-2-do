@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import TaskPage from "./components/TaskPage";
 import { connect } from "react-redux";
-import { addTask } from "./store/taskActions";
 import "./App.css";
 
 class App extends Component {
@@ -10,9 +9,9 @@ class App extends Component {
     this.createTask = this.createTask.bind(this);
   }
   createTask(task) {
-    
     this.props.addTask(task);
   }
+  
   render() {
     return (
       <div className="App">
@@ -30,7 +29,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addTask: task => dispatch(addTask(task))
+    addTask: task => dispatch({
+      type: "ADD_TASK",
+      payload: task
+    })
   };
 }
 
