@@ -13,12 +13,24 @@ const mockTasks = [{
     id: createUUID(),
   },
   {
-    title: 'Learn Redux in ES6',
-    description: 'Because it\'s too hard in typescript',
+    title: 'Learn how to properly log in Node.js',
+    description: 'DataDog?  MongoDB?',
     status: 'in progress',
     id: createUUID(),
   }];
 
 export default function tasks(state = {tasks: mockTasks}, action) {
-    return state;
+  switch(action.type) {
+    case "ADD_TASK":
+      return {
+        tasks: state.tasks.concat({
+          ...action.payload,
+          status: 'not started',
+          id: createUUID(),
+        })
+      }
+      default:
+        return state;
+  }
+    
 }
