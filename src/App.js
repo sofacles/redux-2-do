@@ -10,7 +10,6 @@ class App extends Component {
     this.createTask = this.createTask.bind(this);
   }
   createTask(task) {
-    
     this.props.addTask(task);
   }
   render() {
@@ -28,10 +27,5 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    addTask: task => dispatch(addTask(task))
-  };
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, {addTask})(App);
